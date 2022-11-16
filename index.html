@@ -19,12 +19,13 @@
         position: absolute;
         z-index: 10;
         color: yellow;
+        font-size: 2em;
         left: 10px;
         top: 10px;
         margin: 0;
         display: none;
       ">
-        <span>Score:</span> <span id="scoreEl">0</span>
+        <span id="score">Score:</span> <span id="scoreEl">0</span>
     </p>
     <canvas></canvas>
     <!-- background container -->
@@ -49,7 +50,7 @@
                 color: rgb(255, 187, 0);
                 font-size: 4em;
                 text-shadow: 0 .5rem .5rem rgba(0, 0, 0);
-                margin-bottom: 20px;
+                margin-bottom: 60px;
                 ">Space Invaders</h1>
 
             <!-- button -->
@@ -69,7 +70,7 @@
     <!-- background container -->
     <div id="restartScreen" style="
         position: absolute;
-        top: 0;
+        top: 30;
         right: 0;
         bottom: 0;
         left: 0;
@@ -81,15 +82,32 @@
         align-items: center;
         justify-content: center;
       ">
-        <div style="text-align: center">
-            <h1 style="color: white; font-size: 24px">Game Over</h1>
-            <h1 id="finalScore" style="color: white; margin: 0; font-size: 48px">
-                300
+        <div style="
+        text-align: center">
+            <h1 style="
+            color: red; 
+            font-size: 4em;
+            margin-bottom: 20;
+            text-shadow: 0 .5rem .5rem rgba(0, 0, 0);
+            ">Game Over</h1>
+            <h1 id="finalScore" style="
+            color: yellow;
+            text-shadow: 0 .5rem .5rem rgba(0, 0, 0);
+            margin: 0; 
+            font-size: 48px">
             </h1>
-            <p style="color: white; margin-top: 0">Points</p>
+            <p style="
+            color: white;
+             margin-top: 0;
+             margin-bottom: 20;
+             ">Points</p>
 
-            <!-- button -->
-            <div id="restartButton" style="cursor: pointer; position: relative; display: inline-block">
+            <!-- buttons -->
+            <div id="restartButton" style="
+            cursor: pointer; 
+            position: relative;
+            display: inline-block
+            ">
                 <img src="./img/button.png" alt="Restart Button" />
                 <span style="
               position: absolute;

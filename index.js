@@ -78,7 +78,7 @@ function init() {
                 },
                 velocity: {
                     x: 0,
-                    y: 0.3
+                    y: 0.8
                 },
                 radius: Math.random() * 2,
                 color: 'white'
@@ -90,6 +90,7 @@ function init() {
 function endGame() {
     console.log('you lose')
     audio.gameOver.play()
+    audio.explode.play()
 
     // Makes player disappear
     setTimeout(() => {
@@ -106,7 +107,7 @@ function endGame() {
 
     createParticles({
         object: player,
-        color: 'white',
+        color: 'orange',
         fades: true
     })
 }
@@ -274,7 +275,7 @@ function animate() {
         grid.update()
 
         // spawn projectiles
-        if (frames % 100 === 0 && grid.invaders.length > 0) {
+        if (frames % 80 === 0 && grid.invaders.length > 0) {
             grid.invaders[Math.floor(Math.random() * grid.invaders.length)].shoot(
                 invaderProjectiles
             )
@@ -406,6 +407,7 @@ function animate() {
         spawnBuffer -= 100
     }
 
+
     if (
         keys.space.pressed &&
         player.powerUp === 'MachineGun' &&
@@ -462,6 +464,7 @@ addEventListener('keydown', ({
             break
         case ' ':
             keys.space.pressed = true
+
 
             if (player.powerUp === 'MachineGun') return
 

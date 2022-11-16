@@ -18,7 +18,7 @@ class Player {
       this.height = image.height * scale
       this.position = {
         x: canvas.width / 2 - this.width / 2,
-        y: canvas.height - this.height - 20
+        y: canvas.height - this.height - 40
       }
     }
 
@@ -73,7 +73,7 @@ class Player {
             y: 1.4
           },
           radius: Math.random() * 2,
-          color: 'red',
+          color: 'orange',
           fades: true
         })
       )

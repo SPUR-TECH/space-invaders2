@@ -9,6 +9,14 @@
         max-height: 100vh;
         padding-top: 0;
     }
+
+    span#score {
+        font-size: .6em;
+    }
+
+    span#scoreEL {
+        font-size: .6em;
+    }
 }
 
 @media (max-width: 400px) {

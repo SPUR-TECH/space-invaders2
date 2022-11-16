@@ -9,7 +9,7 @@ function createScoreLabel({
     const scoreLabel = document.createElement('label')
     scoreLabel.innerHTML = score
     scoreLabel.style.position = 'absolute'
-    scoreLabel.style.color = 'white'
+    scoreLabel.style.color = 'yellow'
     scoreLabel.style.top = object.position.y + 'px'
     scoreLabel.style.left = object.position.x + 'px'
     scoreLabel.style.userSelect = 'none'
@@ -18,7 +18,7 @@ function createScoreLabel({
     gsap.to(scoreLabel, {
         opacity: 0,
         y: -30,
-        duration: 0.75,
+        duration: 0.95,
         onComplete: () => {
             document.querySelector('#parentDiv').removeChild(scoreLabel)
         }
@@ -41,7 +41,7 @@ function createParticles({
     color,
     fades
 }) {
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 55; i++) {
         particles.push(
             new Particle({
                 position: {
@@ -49,11 +49,11 @@ function createParticles({
                     y: object.position.y + object.height / 2
                 },
                 velocity: {
-                    x: (Math.random() - 0.5) * 2,
-                    y: (Math.random() - 0.5) * 2
+                    x: (Math.random() - 0.5) * 8,
+                    y: (Math.random() - 0.5) * 8
                 },
                 radius: Math.random() * 3,
-                color: color || '#BAA0DE',
+                color: color || 'red',
                 fades
             })
         )
