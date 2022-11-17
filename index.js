@@ -91,6 +91,7 @@ function endGame() {
     console.log('you lose')
     audio.gameOver.play()
     audio.explode.play()
+    audio.backgroundMusic.stop()
 
     // Makes player disappear
     setTimeout(() => {
@@ -445,6 +446,7 @@ document.querySelector('#startButton').addEventListener('click', () => {
 
 document.querySelector('#restartButton').addEventListener('click', () => {
     audio.select.play()
+    audio.backgroundMusic.play()
     document.querySelector('#restartScreen').style.display = 'none'
     init()
     animate()
