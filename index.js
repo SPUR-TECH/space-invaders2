@@ -88,7 +88,6 @@ function init() {
 }
 
 function endGame() {
-    console.log('you lose')
     audio.gameOver.play()
     audio.explode.play()
     audio.backgroundMusic.stop()
@@ -412,10 +411,10 @@ function animate() {
     if (
         keys.space.pressed &&
         player.powerUp === 'MachineGun' &&
-        frames % 2 === 0 &&
+        frames % 10 === 0 &&
         !game.over
     ) {
-        if (frames % 6 === 0) audio.shoot.play()
+        if (frames % 10 === 0) audio.shoot.play()
         projectiles.push(
             new Projectile({
                 position: {
