@@ -21,7 +21,7 @@ let keys = {
         pressed: false
     },
     space: {
-        pressed: false
+        pressed: true
     }
 }
 
@@ -55,7 +55,7 @@ function init() {
             pressed: false
         },
         space: {
-            pressed: false
+            pressed: true
         }
     }
 
@@ -410,10 +410,10 @@ function animate() {
     if (
         keys.space.pressed &&
         player.powerUp === 'MachineGun' &&
-        frames % 20 === 0 &&
+        frames % 6 === 0 &&
         !game.over
     ) {
-        if (frames % 20 === 0) audio.shoot.play()
+        if (frames % 6 === 0) audio.shoot.play()
         projectiles.push(
             new Projectile({
                 position: {
@@ -448,6 +448,52 @@ document.querySelector('#restartButton').addEventListener('click', () => {
     init()
     animate()
 })
+
+touchX = ""
+
+addEventListener("touchstart", e => {
+    passive = true
+    touchX = e.changedTouches[0].pageX
+    e.preventDefault()
+    console.log(e)
+
+    if (touchX <= canvas.width - 950) {
+        keys.a.pressed = true
+    }
+    if (touchX >= canvas.width - 950) {
+        keys.d.pressed = true
+    }
+    if (touchX >= canvas.width - 840) {
+        keys.d.pressed = false
+    }
+});
+
+addEventListener("touchend", e => {
+    keys.a.pressed = false,
+        keys.d.pressed = false
+});
+
+addEventListener("click", e => {
+    passive = true
+    e.preventDefault()
+    console.log(e)
+    keys.space.pressed = true
+    if (player.powerUp === 'MachineGun') return
+
+    audio.shoot.play()
+    projectiles.push(
+        new Projectile({
+            position: {
+                x: player.position.x + player.width / 2,
+                y: player.position.y
+            },
+            velocity: {
+                x: 0,
+                y: -20
+            }
+        })
+    )
+});
 
 addEventListener('keydown', ({
     key
@@ -497,7 +543,7 @@ addEventListener('keyup', ({
             keys.d.pressed = false
             break
         case ' ':
-            keys.space.pressed = false
+            keys.space.pressed = true
 
             break
     }
