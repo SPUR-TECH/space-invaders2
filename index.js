@@ -254,12 +254,10 @@ function animate() {
                 projectiles.splice(i, 1)
                 powerUps.splice(j, 1)
                 player.powerUp = 'MachineGun'
-                console.log('powerup started')
                 audio.bonus.play()
 
                 setTimeout(() => {
                     player.powerUp = null
-                    console.log('powerup ended')
                 }, 5000)
             }
         }
@@ -387,6 +385,7 @@ function animate() {
     if (keys.a.pressed && player.position.x >= 0) {
         player.velocity.x = -7
         player.rotation = -0.15
+
     } else if (
         keys.d.pressed &&
         player.position.x + player.width <= canvas.width
@@ -411,10 +410,10 @@ function animate() {
     if (
         keys.space.pressed &&
         player.powerUp === 'MachineGun' &&
-        frames % 10 === 0 &&
+        frames % 20 === 0 &&
         !game.over
     ) {
-        if (frames % 10 === 0) audio.shoot.play()
+        if (frames % 20 === 0) audio.shoot.play()
         projectiles.push(
             new Projectile({
                 position: {
@@ -423,13 +422,12 @@ function animate() {
                 },
                 velocity: {
                     x: 0,
-                    y: -10
+                    y: -20
                 },
                 color: 'yellow'
             })
         )
     }
-
     frames++
 }
 
@@ -457,6 +455,7 @@ addEventListener('keydown', ({
     if (game.over) return
 
     switch (key) {
+
         case 'a':
             keys.a.pressed = true
             break
@@ -478,7 +477,7 @@ addEventListener('keydown', ({
                     },
                     velocity: {
                         x: 0,
-                        y: -10
+                        y: -20
                     }
                 })
             )

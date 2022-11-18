@@ -28,6 +28,55 @@
         <span id="score">Score:</span> <span id="scoreEl">0</span>
     </p>
     <canvas></canvas>
+    <div style=" position: relative;
+            z-index: 100;
+            opacity: .4;">
+        <div id=" left" onclick="move()" style="
+            cursor: pointer; 
+            position: absolute;
+            bottom: 10;
+            left: 20;
+            ">
+            <img src="./img/button.png" alt="Restart Button" />
+            <span style="
+              position: absolute;
+              color: white;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              left: 50%;
+            ">LEFT</span>
+        </div>
+        <div id="right" onclick="move()" style="
+            cursor: pointer; 
+            position: absolute;
+            bottom: 10;
+            left: 140;
+            ">
+            <img src="./img/button.png" alt="Restart Button" />
+            <span style="
+              position: absolute;
+              color: white;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              left: 50%;
+            ">RIGHT</span>
+        </div>
+        <div id="fire" onclick="shoot()" style="
+            cursor: pointer; 
+            position: absolute;
+            bottom: 10;
+            right: 20;
+            ">
+            <img src="./img/button.png" alt="Restart Button" />
+            <span style="
+              position: absolute;
+              color: white;
+              top: 50%;
+              transform: translate(-50%, -50%);
+              left: 50%;
+            ">FIRE</span>
+        </div>
+    </div>
     <!-- background container -->
     <div id="startScreen" style="
         position: absolute;
