@@ -18,7 +18,7 @@ class Player {
       this.height = image.height * scale
       this.position = {
         x: canvas.width / 2 - this.width / 2,
-        y: canvas.height - this.height - 60
+        y: canvas.height - this.height - 80
       }
     }
 
