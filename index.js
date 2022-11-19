@@ -449,34 +449,11 @@ document.querySelector('#restartButton').addEventListener('click', () => {
     animate()
 })
 
-touchX = ""
+// touchX = ""
 
-addEventListener("touchstart", e => {
-    passive = true
-    touchX = e.changedTouches[0].pageX
+const fire = document.getElementById("fire")
+fire.addEventListener("touchstart", e => {
     e.preventDefault()
-    console.log(e)
-
-    if (touchX <= canvas.width - 950) {
-        keys.a.pressed = true
-    }
-    if (touchX >= canvas.width - 950) {
-        keys.d.pressed = true
-    }
-    if (touchX >= canvas.width - 840) {
-        keys.d.pressed = false
-    }
-});
-
-addEventListener("touchend", e => {
-    keys.a.pressed = false,
-        keys.d.pressed = false
-});
-
-addEventListener("click", e => {
-    passive = true
-    e.preventDefault()
-    console.log(e)
     keys.space.pressed = true
     if (player.powerUp === 'MachineGun') return
 
@@ -493,6 +470,30 @@ addEventListener("click", e => {
             }
         })
     )
+})
+
+const moveLeft = document.getElementById("moveLeft")
+moveLeft.addEventListener("touchstart", e => {
+    e.preventDefault()
+    keys.a.pressed = true
+    console.log("moveLeft")
+})
+
+const moveRight = document.getElementById("moveRight")
+moveRight.addEventListener("touchstart", e => {
+    e.preventDefault()
+    keys.d.pressed = true
+    console.log("moveRight")
+})
+
+addEventListener("touchend", e => {
+    keys.a.pressed = false,
+        keys.d.pressed = false
+});
+
+addEventListener("touchcancel", e => {
+    keys.a.pressed = false,
+        keys.d.pressed = false
 });
 
 addEventListener('keydown', ({
