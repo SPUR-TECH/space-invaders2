@@ -339,9 +339,9 @@ function animate() {
                             scoreEl.innerHTML = score
 
                             // dynamic score labels
-                            createScoreLabel({
-                                object: invader
-                            })
+                            // createScoreLabel({
+                            //     object: invader
+                            // })
 
                             createParticles({
                                 object: invader,
@@ -449,14 +449,13 @@ document.querySelector('#restartButton').addEventListener('click', () => {
     animate()
 })
 
-// touchX = ""
-
 const fire = document.getElementById("fire")
 fire.addEventListener("touchstart", e => {
     e.preventDefault()
     keys.space.pressed = true
-    if (player.powerUp === 'MachineGun') return
+    console.log("fire")
 
+    if (player.powerUp === 'MachineGun') return
     audio.shoot.play()
     projectiles.push(
         new Projectile({
@@ -505,10 +504,10 @@ addEventListener("touchend", e => {
         keys.d.pressed = false
 });
 
-// addEventListener("touchcancel", e => {
-//     keys.a.pressed = false,
-//         keys.d.pressed = false
-// });
+addEventListener("touchcancel", e => {
+    keys.a.pressed = false,
+        keys.d.pressed = false
+});
 
 addEventListener('keydown', ({
     key
