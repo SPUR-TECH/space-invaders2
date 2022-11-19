@@ -479,8 +479,22 @@ moveLeft.addEventListener("touchstart", e => {
     console.log("moveLeft")
 })
 
+const Left = document.getElementById("moveLeft")
+moveLeft.addEventListener("touchmove", e => {
+    e.preventDefault()
+    keys.a.pressed = true
+    console.log("moveLeft")
+})
+
 const moveRight = document.getElementById("moveRight")
 moveRight.addEventListener("touchstart", e => {
+    e.preventDefault()
+    keys.d.pressed = true
+    console.log("moveRight")
+})
+
+const Right = document.getElementById("moveRight")
+moveRight.addEventListener("touchmove", e => {
     e.preventDefault()
     keys.d.pressed = true
     console.log("moveRight")
@@ -491,10 +505,10 @@ addEventListener("touchend", e => {
         keys.d.pressed = false
 });
 
-addEventListener("touchcancel", e => {
-    keys.a.pressed = false,
-        keys.d.pressed = false
-});
+// addEventListener("touchcancel", e => {
+//     keys.a.pressed = false,
+//         keys.d.pressed = false
+// });
 
 addEventListener('keydown', ({
     key
