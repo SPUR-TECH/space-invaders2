@@ -31,9 +31,10 @@
   <div style="
         cursor: pointer; 
         position: absolute;
-        opacity: .4;
-        bottom: 0;
+        opacity: .5;
+        bottom: 10;
         right: -130;
+        z-index: 100;
       ">
     <button id="fire" style="
         padding-left: 80px;
@@ -59,13 +60,14 @@
 
   <div style=" 
         position: relative;
-        z-index: 100;
-        opacity: .4;">
+      ">
     <div style="
         cursor: pointer; 
         position: absolute;
-        bottom: 0;
+        bottom: 10;
         left: 10;
+        z-index: 100;
+        opacity: .5;
       ">
       <button id="moveLeft" style="
         padding: 10px;
@@ -81,13 +83,19 @@
       ">LEFT</span>
       </button>
     </div>
+  </div>
 
+  <div style=" 
+        position: relative;
+      ">
     <div style="
         cursor: pointer; 
         position: absolute;
-        bottom: 0;
+        bottom: 10;
         left: 150;
-        ">
+        opacity: .5;
+        z-index: 100;
+      ">
       <button id="moveRight" style="
         padding: 10px;
         background:transparent;
@@ -102,7 +110,6 @@
       ">RIGHT</span>
       </button>
     </div>
-
   </div>
   <!-- background container -->
   <div id="startScreen" style="

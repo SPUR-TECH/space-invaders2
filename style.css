@@ -29,7 +29,14 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+    canvas {
+        max-width: 100%;
+        max-height: 100vh;
+    }
+}
+
+@media (max-height: 500px) {
     canvas {
         max-width: 100%;
         max-height: 100vh;

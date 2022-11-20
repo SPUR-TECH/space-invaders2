@@ -33,7 +33,7 @@ let game = {
 }
 let score = 0
 
-let spawnBuffer = 700
+let spawnBuffer = 500
 let fps = 60
 let fpsInterval = 1000 / fps
 let msPrev = window.performance.now()
@@ -401,7 +401,7 @@ function animate() {
     if (frames % randomInterval === 0) {
         spawnBuffer = spawnBuffer < 0 ? 100 : spawnBuffer
         grids.push(new Grid())
-        randomInterval = Math.floor(Math.random() * 700 + spawnBuffer)
+        randomInterval = Math.floor(Math.random() * 500 + spawnBuffer)
         frames = 0
         spawnBuffer -= 100
     }
