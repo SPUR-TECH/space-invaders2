@@ -6,7 +6,7 @@ class Grid {
     }
 
     this.velocity = {
-      x: 2,
+      x: 3,
       y: 0
     }
 
