@@ -33,7 +33,7 @@ let game = {
 }
 let score = 0
 
-let spawnBuffer = 500
+let spawnBuffer = 700
 let fps = 60
 let fpsInterval = 1000 / fps
 let msPrev = window.performance.now()
@@ -401,7 +401,7 @@ function animate() {
     if (frames % randomInterval === 0) {
         spawnBuffer = spawnBuffer < 0 ? 100 : spawnBuffer
         grids.push(new Grid())
-        randomInterval = Math.floor(Math.random() * 500 + spawnBuffer)
+        randomInterval = Math.floor(Math.random() * 700 + spawnBuffer)
         frames = 0
         spawnBuffer -= 100
     }
@@ -453,7 +453,6 @@ const fire = document.getElementById("fire")
 fire.addEventListener("touchstart", e => {
     e.preventDefault()
     keys.space.pressed = true
-    console.log("fire")
 
     if (player.powerUp === 'MachineGun') return
     audio.shoot.play()
@@ -475,28 +474,24 @@ const moveLeft = document.getElementById("moveLeft")
 moveLeft.addEventListener("touchstart", e => {
     e.preventDefault()
     keys.a.pressed = true
-    console.log("moveLeft")
 })
 
 const Left = document.getElementById("moveLeft")
 moveLeft.addEventListener("touchmove", e => {
     e.preventDefault()
     keys.a.pressed = true
-    console.log("moveLeft")
 })
 
 const moveRight = document.getElementById("moveRight")
 moveRight.addEventListener("touchstart", e => {
     e.preventDefault()
     keys.d.pressed = true
-    console.log("moveRight")
 })
 
 const Right = document.getElementById("moveRight")
 moveRight.addEventListener("touchmove", e => {
     e.preventDefault()
     keys.d.pressed = true
-    console.log("moveRight")
 })
 
 addEventListener("touchend", e => {
