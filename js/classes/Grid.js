@@ -23,7 +23,7 @@ class Grid {
           new Invader({
             position: {
               x: x * 50,
-              y: y * 50
+              y: y * 50 + 10
             }
           })
         )
