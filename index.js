@@ -284,6 +284,7 @@ function animate() {
             invader.update({
                 velocity: grid.velocity
             })
+            console.clear()
 
             for (let j = bombs.length - 1; j >= 0; j--) {
                 const bomb = bombs[j]
@@ -518,25 +519,23 @@ addEventListener('keydown', ({
             keys.d.pressed = true
             break
         case ' ':
+
             keys.space.pressed = true
-
-
             if (player.powerUp === 'MachineGun') return
-
             audio.shoot.play()
             projectiles.push(
                 new Projectile({
                     position: {
                         x: player.position.x + player.width / 2,
-                        y: player.position.y
+                        y: player.position.y,
                     },
                     velocity: {
                         x: 0,
-                        y: -20
-                    }
+                        y: -10,
+                    },
                 })
             )
-
+            //keys.space.pressed = true
             break
     }
 })

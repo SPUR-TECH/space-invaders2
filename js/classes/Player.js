@@ -74,7 +74,7 @@ class Player {
           },
           radius: Math.random() * 2,
           color: 'orange',
-          fades: true
+          fades: false
         })
       )
     }
