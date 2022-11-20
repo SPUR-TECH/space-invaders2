@@ -28,86 +28,75 @@
     <span id="score">Score:</span> <span id="scoreEl">0</span>
   </p>
   <canvas></canvas>
-  <div style="
-        cursor: pointer; 
-        position: absolute;
-        opacity: .5;
-        bottom: 10;
-        right: -130;
-        z-index: 100;
-      ">
-    <button id="fire" style="
-        padding-left: 80px;
-        padding-top: 80px;
-        padding-right: 150px;
-        padding-bottom: 10px;
-        background:transparent;
-        border:none;">
-      <img src="./img/button.png" alt="Shoot Button" />
-      <span style="
-        padding-left: 30px;
-        padding-top: 80px;
-        padding-right: 100px;
-        padding-bottom: 10px;
-        position: absolute;
-        color: white;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        left: 50%;
-      ">FIRE</span>
-    </button>
-  </div>
-
   <div style=" 
-        position: relative;
-      ">
+            position: relative;
+            z-index: 100;
+            opacity: .4;">
     <div style="
-        cursor: pointer; 
-        position: absolute;
-        bottom: 10;
-        left: 10;
-        z-index: 100;
-        opacity: .5;
-      ">
+            cursor: pointer; 
+            position: absolute;
+            bottom: 10;
+            left: 10;
+            ">
       <button id="moveLeft" style="
-        padding: 10px;
-        background:transparent;
-        border:none;">
+            padding: 10px;
+            background:transparent;
+            border:none;">
         <img src="./img/button.png" alt="Left Button" />
         <span style="
-        position: absolute;
-        color: white;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        left: 50%;
-      ">LEFT</span>
+            position: absolute;
+            color: white;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            ">LEFT</span>
       </button>
     </div>
-  </div>
-
-  <div style=" 
-        position: relative;
-      ">
     <div style="
-        cursor: pointer; 
-        position: absolute;
-        bottom: 10;
-        left: 150;
-        opacity: .5;
-        z-index: 100;
-      ">
+            cursor: pointer; 
+            position: absolute;
+            bottom: 10;
+            left: 150;
+            ">
       <button id="moveRight" style="
-        padding: 10px;
-        background:transparent;
-        border:none;">
+            padding: 10px;
+            background:transparent;
+            border:none;">
         <img src="./img/button.png" alt="Right Button" />
         <span style="
-        position: absolute;
-        color: white;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        left: 50%;
-      ">RIGHT</span>
+            position: absolute;
+            color: white;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            ">RIGHT</span>
+      </button>
+    </div>
+    <div style="
+            cursor: pointer; 
+            position: absolute;
+            bottom: 20;
+            right: -100;
+            ">
+      <button id="fire" style="
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 80px;
+            padding-top: 80px;
+            padding-right: 100px;
+            background:transparent;
+            border:none;">>
+        <img src="./img/button.png" alt="Shoot Button" />
+        <span style="
+            padding-top: 80px;
+            padding-right: 10px;
+            position: absolute;
+            color: white;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            ">FIRE</span>
       </button>
     </div>
   </div>
