@@ -69,12 +69,12 @@ class Player {
             y: this.position.y + this.height
           },
           velocity: {
-            x: (Math.random() - 0.5) * 0.5,
+            x: (Math.random() - 0.5) * 0.9,
             y: 1.4
           },
           radius: Math.random() * 2,
           color: 'orange',
-          fades: false
+          fades: true
         })
       )
     }
