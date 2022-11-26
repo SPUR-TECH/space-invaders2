@@ -393,14 +393,14 @@ function animate() {
 
     if (keys.a.pressed && player.position.x >= 0) {
         player.velocity.x = -7
-        player.rotation = -0.15
+        player.rotation = -0.35
 
     } else if (
         keys.d.pressed &&
         player.position.x + player.width <= canvas.width
     ) {
         player.velocity.x = 7
-        player.rotation = 0.15
+        player.rotation = 0.35
     } else {
         player.velocity.x = 0
         player.rotation = 0
@@ -408,7 +408,7 @@ function animate() {
 
     // spawning enemies
     if (frames % randomInterval === 0) {
-        spawnBuffer = spawnBuffer < 0 ? 100 : spawnBuffer
+        spawnBuffer = spawnBuffer < 0 ? 50 : spawnBuffer
         grids.push(new Grid())
         randomInterval = Math.floor(Math.random() * 500 + spawnBuffer)
         frames = 0
