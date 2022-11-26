@@ -54,7 +54,7 @@ function createParticles({
                 },
                 radius: Math.random() * 3,
                 color: color || 'yellow',
-                fades
+                fades: true
             })
         )
     }

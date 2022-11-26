@@ -180,7 +180,15 @@ function animate() {
         const particle = player.particles[i]
         particle.update()
 
-        if (particle.opacity === 0) player.particles[i].splice(i, 1)
+
+
+        if (particle.opacity <= 0.05) {
+            setTimeout(() => {
+                player.particles.splice(i, 1)
+            }, 0)
+
+            particle.update()
+        }
     }
 
     particles.forEach((particle, i) => {
@@ -284,7 +292,6 @@ function animate() {
             invader.update({
                 velocity: grid.velocity
             })
-            // console.clear()
 
             for (let j = bombs.length - 1; j >= 0; j--) {
                 const bomb = bombs[j]
@@ -315,6 +322,7 @@ function animate() {
                     })
                 }
             }
+
 
             // projectiles hit enemy
             projectiles.forEach((projectile, j) => {
