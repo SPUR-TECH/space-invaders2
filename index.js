@@ -178,17 +178,8 @@ function animate() {
 
     for (let i = player.particles.length - 1; i >= 0; i--) {
         const particle = player.particles[i]
-        particle.update()
-
-
-
-        if (particle.opacity <= 0.05) {
-            setTimeout(() => {
-                player.particles.splice(i, 1)
-            }, 0)
-
-            particle.update()
-        }
+        if (particle.opacity <= 0) player.particles.splice(i, 1)
+        else particle.update()
     }
 
     particles.forEach((particle, i) => {
