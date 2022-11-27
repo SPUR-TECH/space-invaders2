@@ -102,6 +102,7 @@ function endGame() {
     setTimeout(() => {
         game.active = false
         document.querySelector('#restartScreen').style.display = 'flex'
+        document.querySelector('#button-div').style.display = 'none'
         document.querySelector('#finalScore').innerHTML = score
     }, 2000)
 
@@ -200,7 +201,7 @@ function animate() {
     invaderProjectiles.forEach((invaderProjectile, index) => {
         if (
             invaderProjectile.position.y + invaderProjectile.height >=
-            canvas.height - 80
+            canvas.height - 90
         ) {
             setTimeout(() => {
                 invaderProjectiles.splice(index, 1)
@@ -384,14 +385,14 @@ function animate() {
 
     if (keys.a.pressed && player.position.x >= 0) {
         player.velocity.x = -7
-        player.rotation = -0.35
+        player.rotation = -0.15
 
     } else if (
         keys.d.pressed &&
         player.position.x + player.width <= canvas.width
     ) {
         player.velocity.x = 7
-        player.rotation = 0.35
+        player.rotation = 0.15
     } else {
         player.velocity.x = 0
         player.rotation = 0
@@ -430,8 +431,9 @@ function animate() {
     }
     frames++
 }
-
+document.querySelector('#button-div').style.display = 'none'
 document.querySelector('#startButton').addEventListener('click', () => {
+    document.querySelector('#button-div').style.display = 'flex'
     audio.backgroundMusic.play()
     audio.start.play()
 
@@ -442,6 +444,7 @@ document.querySelector('#startButton').addEventListener('click', () => {
 })
 
 document.querySelector('#restartButton').addEventListener('click', () => {
+    document.querySelector('#button-div').style.display = 'flex'
     audio.select.play()
     audio.backgroundMusic.play()
     document.querySelector('#restartScreen').style.display = 'none'
@@ -518,6 +521,7 @@ addEventListener('keydown', ({
             keys.d.pressed = true
             break
         case ' ':
+            if (keys.space.pressed) return
 
             keys.space.pressed = true
             if (player.powerUp === 'MachineGun') return
@@ -550,7 +554,7 @@ addEventListener('keyup', ({
             keys.d.pressed = false
             break
         case ' ':
-            keys.space.pressed = true
+            keys.space.pressed = false
 
             break
     }
