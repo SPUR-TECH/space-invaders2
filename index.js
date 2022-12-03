@@ -473,6 +473,27 @@ fire.addEventListener("touchstart", e => {
     )
 })
 
+const autoFire = document.getElementById("fire")
+fire.addEventListener("touchmove", e => {
+    e.preventDefault()
+    keys.space.pressed = true
+
+    if (player.powerUp === 'MachineGun') return
+    audio.shoot.play()
+    projectiles.push(
+        new Projectile({
+            position: {
+                x: player.position.x + player.width / 2,
+                y: player.position.y
+            },
+            velocity: {
+                x: 0,
+                y: -20
+            }
+        })
+    )
+})
+
 const moveLeft = document.getElementById("moveLeft")
 moveLeft.addEventListener("touchstart", e => {
     e.preventDefault()
