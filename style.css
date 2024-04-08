@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+canvas {
+    max-width: 100%;
+    max-height: 100vh;
+    padding-top: 0;
+}
+
 .dot {
     background-color: red;
     width: 1rem;
@@ -14,11 +20,11 @@
 
 
 @media (max-width: 999px) {
-    canvas {
+    /* canvas {
         max-width: 100%;
         max-height: 100vh;
         padding-top: 0;
-    }
+    } */
 
     span#score {
         font-size: .6em;
@@ -29,7 +35,7 @@
     }
 }
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
     canvas {
         max-width: 100%;
         max-height: 100vh;
@@ -41,4 +47,4 @@
         max-width: 100%;
         max-height: 100vh;
     }
-}
+} */
